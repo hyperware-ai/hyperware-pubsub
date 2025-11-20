@@ -1,0 +1,19 @@
+[package]
+name = "hyperware-pubsub-core"
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+authors = ["Hyperware"]
+description = "Core transport abstractions for Hyperware's pub/sub system"
+repository = "https://github.com/hyperware-ai/hyperware-pubsub"
+
+[dependencies]
+async-trait = "0.1"
+bytes = { version = "1.7", features = ["serde"] }
+futures-core = "0.3"
+serde = { version = "1.0", features = ["derive"] }
+thiserror = "1.0"
+uuid = { version = "1.11", features = ["serde", "v4"] }
+
+[dev-dependencies]
+futures = "0.3"
