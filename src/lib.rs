@@ -20,6 +20,7 @@ use serde::{Deserialize, Serialize};
 use thiserror::Error;
 use uuid::Uuid;
 
+pub mod auth;
 pub mod router;
 pub mod storage;
 
@@ -192,6 +193,7 @@ pub struct PublishOptions {
     pub fanout: FanoutScope,
     pub dedupe: DedupeScope,
     pub ttl: Option<Duration>,
+    pub token: Option<auth::CapabilityToken>,
 }
 
 impl Default for PublishOptions {
@@ -201,6 +203,7 @@ impl Default for PublishOptions {
             fanout: FanoutScope::default(),
             dedupe: DedupeScope::default(),
             ttl: None,
+            token: None,
         }
     }
 }
@@ -251,6 +254,7 @@ pub struct SubscribeRequest {
     pub flow_control: FlowControl,
     pub audience: Option<String>,
     pub feature: Option<String>,
+    pub token: Option<auth::CapabilityToken>,
 }
 
 impl SubscribeRequest {
@@ -262,6 +266,7 @@ impl SubscribeRequest {
             flow_control: FlowControl::default(),
             audience: None,
             feature: None,
+            token: None,
         }
     }
 }
