@@ -21,6 +21,8 @@ use thiserror::Error;
 use uuid::Uuid;
 
 pub mod auth;
+pub mod observability;
+pub mod reliability;
 pub mod router;
 pub mod storage;
 
@@ -288,6 +290,12 @@ impl SubscriptionId {
 impl Default for SubscriptionId {
     fn default() -> Self {
         Self::new()
+    }
+}
+
+impl fmt::Display for SubscriptionId {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        self.0.fmt(f)
     }
 }
 

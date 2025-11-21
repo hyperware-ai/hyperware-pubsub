@@ -9,3 +9,4 @@ core abstractions live in this root crate under `src/` and currently provide:
 - Authentication & ACL primitives (`auth.rs`)
 - Routing strategies (`router.rs`) with direct and hub-spoke policies
 - Queue storage interfaces + in-memory backend (`storage.rs`)
+- Observability hooks and reliability utilities (`observability.rs`, `reliability.rs`)
