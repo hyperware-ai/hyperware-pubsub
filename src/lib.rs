@@ -24,6 +24,7 @@ pub mod observability;
 pub mod reliability;
 pub mod router;
 pub mod storage;
+pub mod whitelist;
 
 /// Headers that travel alongside an envelope.
 pub type HeaderMap = BTreeMap<String, String>;
