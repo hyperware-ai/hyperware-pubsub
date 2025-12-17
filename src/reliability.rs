@@ -20,6 +20,14 @@ impl DeliveryKey {
     pub fn new() -> Self {
         Self(Uuid::new_v4())
     }
+
+    pub fn to_string(&self) -> String {
+        self.0.to_string()
+    }
+
+    pub fn from_str(value: &str) -> Option<Self> {
+        Uuid::parse_str(value).ok().map(DeliveryKey)
+    }
 }
 
 #[derive(Clone, Debug)]
